@@ -1,10 +1,11 @@
-<h1>Book was successfully created.</h1>
+<%= h(flash[:notice]) %>
+<%= h(flash[:success]) %>
 <!-- form_with部分 -->
 <%= form_with model:@book, local: true do |f| %>
   <h4>Title:<%= @book.title %></h4>
   <h4>Body:<%= @book.body %></h4>
 
-  <h5><a class="edit_270059" href="/books/270059/edit">Edit</a> |
+  <h5><%= link_to 'edit', edit_book_path(@book) %>
 <a class="back" href="/books">Back</a></h5>
 
 
